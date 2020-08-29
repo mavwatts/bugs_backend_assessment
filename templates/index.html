@@ -1,0 +1,36 @@
+<h1>Bug Book</h1>
+
+<a href="addticket/">Add Ticket</a>
+<a href="logout/">Login</a>
+
+<br>
+{{Auth}}
+<br>
+<hr>
+<h2>New Tickets</h2>
+{%for ticket in my_ticket%}
+{% if ticket.ticket_status == 'N' %}
+{{ ticket.title }}
+{% endif %}
+{% endfor %}
+<hr>
+<h2>In Progress</h2>
+{%for ticket in my_ticket%}
+{% if ticket.ticket_status == 'IP' %}
+{{ ticket.title }}
+{% endif %}
+{% endfor %}
+<hr>
+<h2>Completed Tickets</h2>
+{%for ticket in my_ticket%}
+{% if ticket.ticket_status == 'D' %}
+{{ ticket.title }}
+{% endif %}
+{% endfor %}
+<hr>
+<h2>Invalid</h2>
+{%for ticket in my_ticket%}
+{% if ticket.ticket_status == 'Inv' %}
+{{ ticket.title }}
+{% endif %}
+{% endfor %}
